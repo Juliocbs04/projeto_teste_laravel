@@ -8,13 +8,10 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                    <form action="{{route('jobs.store')}}" method="POST">@csrf
+                        <input type="text" name="titulo" class="form-control">
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                    </form>
                 </div>
             </div>
         </div>
